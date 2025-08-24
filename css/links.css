@@ -1,0 +1,20 @@
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.links .icon {
+  width: var(--title-size);
+  height: var(--title-size);
+  vertical-align: middle;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+
+.links .icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  color: var(--accent-color);
+  filter: drop-shadow(0 0 0.3rem var(--accent-color));
+}
