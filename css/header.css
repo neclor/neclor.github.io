@@ -22,9 +22,10 @@
 
 .nav ul {
   display: flex;
-  position: relative;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
   gap: var(--gap);
   list-style: none;
   align-items: center;
