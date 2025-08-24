@@ -65,8 +65,8 @@ a:hover {
   background: var(--footer-color);
   text-align: center;
   padding: 1rem;
-  line-height: 2rem;
-  font-size: 0.9rem;
+  line-height: 3rem;
+  font-size: var(--text-size);
   color: var(--muted-color);
 
   margin-top: auto;
