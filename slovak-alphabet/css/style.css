@@ -3,6 +3,9 @@
   --text-main: #222;
   --text-muted: #555;
 
+  --vowel-color: #e74c3c;
+  --consonant-color: #3498db;
+
   --card-bg: white;
 
   --shadow-normal: rgba(0, 0, 0, 0.08);
@@ -68,4 +71,12 @@ body {
 
 .letter:active {
   transform: scale(0.96);
+}
+
+.vowel {
+  color: var(--vowel-color);
+}
+
+.consonant {
+  color: var(--consonant-color);
 }
