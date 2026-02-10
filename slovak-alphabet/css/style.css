@@ -1,0 +1,71 @@
+:root {
+  --bg-page: #f5f6fa;
+  --text-main: #222;
+  --text-muted: #555;
+
+  --card-bg: white;
+
+  --shadow-normal: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.14);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+.header {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.header p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+}
+
+.letter {
+  aspect-ratio: 1 / 1;
+  font-size: 2rem;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+
+  background: var(--card-bg);
+  box-shadow: 0 4px 10px var(--shadow-normal);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.letter:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px var(--shadow-hover);
+}
+
+.letter:active {
+  transform: scale(0.96);
+}
