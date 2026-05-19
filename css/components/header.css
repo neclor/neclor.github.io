@@ -1,0 +1,40 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--header-h);
+  z-index: 100;
+  background: transparent;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  gap: var(--sp-1);
+}
+
+.nav-link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-sm);
+  transition:
+    color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background-color: var(--surface-2);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  background-color: var(--accent-dim);
+}

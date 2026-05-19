@@ -1,0 +1,21 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-subtle) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-subtle);
+  border-radius: var(--r-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-2);
+}

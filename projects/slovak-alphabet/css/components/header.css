@@ -1,0 +1,14 @@
+.header {
+  padding: 1.5rem 5%;
+}
+
+.back-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.back-link:hover {
+  color: var(--text);
+}

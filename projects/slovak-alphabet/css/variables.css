@@ -1,0 +1,22 @@
+:root {
+  --bg: #09090b;
+  --surface: #0f0f12;
+  --surface-2: #18181b;
+
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.14);
+
+  --text: #f4f4f5;
+  --text-muted: #71717a;
+  --text-subtle: #3f3f46;
+
+  --accent: #f97316;
+
+  --font: "Inter", system-ui, -apple-system, sans-serif;
+
+  --r-lg: 1.25rem;
+  --r-full: 9999px;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 150ms;
+}

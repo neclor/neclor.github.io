@@ -5,180 +5,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Neclor</title>
-  <meta property="og:title" content="Neclor">
-  <meta property="og:description" content="Bookmark this to keep an eye on my project updates!">
+  <title>neclor</title>
+  <meta name="description" content="C# &nbsp;·&nbsp; Godot &nbsp;·&nbsp; Kotlin &nbsp;·&nbsp; CS Student">
+  <meta property="og:title" content="neclor">
+  <meta property="og:description" content="C# &nbsp;·&nbsp; Godot &nbsp;·&nbsp; Kotlin &nbsp;·&nbsp; CS Student">
   <meta property="og:image" content="favicon.ico">
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap">
   <link rel="stylesheet" href="css/style.css">
-
-  <link rel="stylesheet" href="css/links.css">
-  <link rel="stylesheet" href="css/section.css">
-  <link rel="stylesheet" href="css/scrollbar.css">
-
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/portfolio.css">
 </head>
 
 <body>
   <header class="header">
-    <div class="header-flex container">
-      <a href="/" class="logo">neclor</a>
+    <div class="container header-inner">
       <nav class="nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <!--
-          <li><a href="#resume">Resume</a></li>
-          -->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <div class="links">
-        <!--
-        <a href="https://www.linkedin.com/in/aleks-pavlov/" target="_blank" title="Linkedin"><img src="assets\img\InBug-White.png" alt="Linkedin" class="icon"></a>
-        -->
-        <a href="https://github.com/neclor" target="_blank" title="GitHub"><img src="assets/img/github-mark-white.svg" alt="GitHub" class="icon"></a>
-        <a href="https://neclordev.itch.io" target="_blank" title="Itch.io"><img src="assets/img/itchio-textless-white.svg" alt="Itch.io" class="icon"></a>
-        <a href="https://x.com/neclordev" target="_blank" title="X"><img src="assets/img/x-logo-white.svg" alt="X" class="icon"></a>
-      </div>
     </div>
   </header>
 
-  <div class="header-indent"></div>
-
   <main>
-    <section id="about" class="section">
+    <section id="about" class="hero">
       <div class="container">
-        <h2 class="section-title">About</h2>
-          <div class="center-container">
-            <p>
-              Computer Science student. <br>
-              Skilled Game Developer in <span class="hightlight">C#</span> & <span class="hightlight">Godot</span>. <br>
-              Focused on designing clean, scalable, and maintainable architectures <br>
-              that ensure reliability, performance, and long-term adaptability. <br>
-            </p>
+        <div class="hero-content">
+
+          <h1 class="hero-name">neclor</h1>
+
+          <p class="hero-role">
+            <em>C#</em> &nbsp;·&nbsp; <em>Godot</em> &nbsp;·&nbsp; <em>Kotlin</em> &nbsp;·&nbsp; CS Student
+          </p>
+
+          <p class="hero-bio">
+            Self-taught developer focused on clean architecture.
+            Author of open-source Godot addons and contributor to the Godot engine.
+            Currently deepening expertise in Kotlin development.
+          </p>
+
+          <div class="hero-socials">
+            <a data-link="github" target="_blank" rel="noopener" class="social-link" title="GitHub">
+              <img src="assets/github-mark-white.svg" alt="GitHub">
+            </a>
+            <a data-link="itchio" target="_blank" rel="noopener" class="social-link" title="Itch.io">
+              <img src="assets/itchio-textless-white.svg" alt="Itch.io">
+            </a>
           </div>
-      </div>
-    </section>
 
-    <section id="Projects" class="section">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-          <div class="center-container">
-            <div class="grid">
-
-              <div class="card">
-                <h3>Balistic Solutions</h3>
-                <p>
-                  Library for calculating interception times, <br>
-                  impact positions, and firing vectors
-                </p>
-                <div class="links">
-                  <a href="https://github.com/neclor/ballistic-solutions" target="_blank">GitHub</a>
-                  <a href="https://godotengine.org/asset-library/asset/3010" target="_blank">Asset Library</a>
-                </div>
-              </div>
-
-              <div class="card">
-                <h3>Netris</h3>
-                <p>
-                  My Tetris-like game
-                </p>
-                <div class="links">
-                  <a href="netris/netris/netris_2.4.3.html" target="_blank">Play</a>
-                  <a href="https://neclor.ru/records/records.html" target="_blank">Records(At work)</a>
-                  <a href="https://github.com/neclor/netris" target="_blank">GitHub</a>
-                </div>
-              </div>
-
-              <div class="card">
-                <h3>Slovak Alphabeth</h3>
-                <p>
-                  Slovak alphabet with sound
-                </p>
-                <div class="links">
-                  <a href="slovak-alphabet/index.html" target="_blank">See</a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <!--
-    <section id="resume" class="section">
-      <div class="container">
-        <h2 class="section-title">Resume</h2>
-          <div class="center-container">
-            <div>
-              <p>
-                Godot Developer (GDScript / C#) <br>
-                <br>
-              </p>
-              <h3>Skills:</h3>
-              <p>
-                - Godot Engine (2D) <br>
-                - GDScript and C# <br>
-                - UI, pixel art <br>
-                - Clean architecture and solving complex algorithmic tasks <br>
-                - Git, GitHub <br>
-                <br>
-              </p>
-              <h3>Experience:</h3>
-              <p>
-                - Participation in game jams (Itch.io). Developing games under tight deadlines. <br>
-                - Creating prototypes and tools. <br>
-                - Solving non-trivial technical problems and implementing clean architectural solutions. <br>
-              </p>
-            </div>
-          </div>
-      </div>
-    </section>
-    -->
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">Links & Contact</h2>
-        <div class="center-container">
-          <div class="links">
-            <!--
-            <a href="https://www.linkedin.com/in/aleks-pavlov/" target="_blank" title="Linkedin"><img src="assets\img\InBug-White.png" alt="Linkedin" class="icon"></a>
-            -->
-            <a href="https://github.com/neclor" target="_blank" title="GitHub"><img src="assets/img/github-mark-white.svg" alt="GitHub" class="icon"></a>
-            <a href="https://neclordev.itch.io" target="_blank" title="Itch.io"><img src="assets/img/itchio-textless-white.svg" alt="Itch.io" class="icon"></a>
-            <a href="https://x.com/neclordev" target="_blank" title="X"><img src="assets/img/x-logo-white.svg" alt="X" class="icon"></a>
-            <a href="mailto:contact@neclor.com" target="_blank" class="link">contact@neclor.com</a>
-          </div>
         </div>
       </div>
     </section>
 
-    <div class="spacer" aria-hidden="true"></div>
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-heading">Projects</h2>
+        <div class="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-heading">Contact</h2>
+
+        <div class="contact-wrapper">
+          <h3 class="contact-title">Let's connect</h3>
+          <a data-link="email" class="contact-email">
+            contact@neclor.com
+          </a>
+          <div class="contact-socials">
+            <a data-link="github" target="_blank" rel="noopener" class="social-link" title="GitHub">
+              <img src="assets/github-mark-white.svg" alt="GitHub">
+            </a>
+            <a data-link="itchio" target="_blank" rel="noopener" class="social-link" title="Itch.io">
+              <img src="assets/itchio-textless-white.svg" alt="Itch.io">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="center-container">
-        <div class="links">
-          <!--
-          <a href="https://www.linkedin.com/in/aleks-pavlov/" target="_blank" title="Linkedin"><img src="assets\img\InBug-White.png" alt="Linkedin" class="icon"></a>
-          -->
-          <a href="https://github.com/neclor" target="_blank" title="GitHub">GitHub</a>
-          <a href="https://neclordev.itch.io" target="_blank" title="Itch.io">Itch.io</a>
-          <a href="https://x.com/neclordev" target="_blank" title="X">X</a>
-          <a href="mailto:contact@neclor.com" target="_blank" class="link">contact@neclor.com</a>
-        </div>
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 neclor. All rights reserved.</p>
+      <div class="footer-links">
+        <a data-link="github" target="_blank" rel="noopener">GitHub</a>
+        <a data-link="itchio" target="_blank" rel="noopener">Itch.io</a>
       </div>
-      <p>© 2026 neclor. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="js/links.js"></script>
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 
 </body>
-
 </html>

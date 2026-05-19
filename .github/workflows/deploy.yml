@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      HOST: ${{ secrets.SSH_HOST }}
+      USER: ${{ secrets.SSH_USER }}
+      PORT: ${{ secrets.SSH_PORT }}
+      KEY: ${{ secrets.SSH_KEY }}
+      DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+
+    steps:
+      - name: Deploy to server
+        run: |
+          echo "$KEY" > ssh_key
+          chmod 600 ssh_key
+
+          ssh -i ssh_key \
+            -p $PORT \
+            -o StrictHostKeyChecking=no \
+            $USER@$HOST \
+            "cd $DEPLOY_PATH && git pull"
+
+          rm ssh_key

@@ -9,14 +9,22 @@ insert_final_newline = true
 [*.md]
 trim_trailing_whitespace = false
 
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
 [*.{htm,html}]
 indent_style = space
 indent_size = 2
+tab_width = 2
 
-[*.css]
+[*.{css,scss}]
 indent_style = space
 indent_size = 2
+tab_width = 2
 
 [*.{js,ts}]
 indent_style = space
 indent_size = 4
+tab_width = 4

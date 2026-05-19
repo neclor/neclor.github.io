@@ -1,0 +1,39 @@
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 0.75rem;
+}
+
+.letter {
+  aspect-ratio: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.letter:hover {
+  border-color: var(--border-hover);
+  background-color: var(--surface-2);
+  transform: translateY(-2px);
+}
+
+.letter:active {
+  transform: scale(0.95);
+}
+
+.letter.vowel {
+  color: var(--accent);
+}
+
+.letter.consonant {
+  color: var(--text-muted);
+}

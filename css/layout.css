@@ -1,0 +1,37 @@
+.container {
+  width: 90%;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+main {
+  flex: 1;
+  padding-top: var(--header-h);
+}
+
+section {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--sp-24);
+}
+
+.section-heading {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: var(--sp-10);
+}
+
+@media (max-width: 640px) {
+  section {
+    min-height: 100svh;
+    padding-block: var(--sp-16);
+  }
+
+  .section-heading {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--sp-8);
+  }
+}

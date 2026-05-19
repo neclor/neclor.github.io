@@ -1,94 +1,11 @@
-:root {
-  --dark-color: #171312;
-  --main-color: #241e1c;
-  --light-color: #352c25;
-  --lighter-color: #473c33;
+@import "variables.css";
+@import "reset.css";
+@import "base.css";
+@import "layout.css";
 
-  --header-color: var(--dark-color);
-  --bg-color: var(--main-color);
-  --footer-color: var(--dark-color);
-
-  --card-color: var(--dark-color);
-  --card-hover-color:var(--light-color);
-
-  --text-color: #e1e1e1;
-  --accent-color: #ffffff;
-  --muted-color: #aeaeae;
-
-  --title-size: 2rem;
-  --text-size: 1rem;
-  --footer-size: 1rem;
-
-  --gap: 1rem;
-
-  --transition: 0.3s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  background: var(--bg-color);
-}
-
-body {
-  font-family: "Roboto", "Inter", Arial, Sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-color);
-  color: var(--text-color);
-  font-size: var(--text-size);
-}
-
-.highlight {
-  color: var(--accent-color);
-  font-weight: bold;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  justify-content: center;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-a:hover {
-  color: var(--accent-color);
-}
-
-.footer {
-  background: var(--footer-color);
-  text-align: center;
-  padding: 1rem;
-  line-height: 3rem;
-  font-size: var(--text-size);
-  color: var(--muted-color);
-
-  margin-top: auto;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
+@import "components/header.css";
+@import "components/hero.css";
+@import "components/projects.css";
+@import "components/contact.css";
+@import "components/footer.css";
+@import "components/scrollbar.css";
