@@ -13,7 +13,8 @@ jobs:
       USER: ${{ secrets.SSH_USER }}
       PORT: ${{ secrets.SSH_PORT }}
       KEY: ${{ secrets.SSH_KEY }}
-      DOMAIN: ${{ vars.DOMAIN }}
+
+      WEB_DIR: ${{ vars.WEB_DIR }}
 
     steps:
       - name: Deploy to server
@@ -25,6 +26,6 @@ jobs:
             -p $PORT \
             -o StrictHostKeyChecking=no \
             $USER@$HOST \
-            "cd /srv/www/$DOMAIN && git pull"
+            "cd $WEB_DIR && git pull"
 
           rm ssh_key
