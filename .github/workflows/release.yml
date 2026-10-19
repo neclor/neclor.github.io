@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Existing tag to (re)release
+        description: Tag to release (created from the selected branch if missing)
         required: true
 
 concurrency:
@@ -19,6 +19,8 @@ jobs:
   validate:
     name: Validate tag
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check tag format
         env:
@@ -27,20 +29,31 @@ jobs:
           [[ "$TAG" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] \
             || { echo "::error::'$TAG' is not a X.Y.Z tag"; exit 1; }
 
+      - name: Create tag if missing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          gh api "repos/$GH_REPO/git/ref/tags/$TAG" >/dev/null 2>&1 \
+            || gh api "repos/$GH_REPO/git/refs" -f ref="refs/tags/$TAG" -f sha="$GITHUB_SHA" >/dev/null
+
   site:
     name: Build site and stage release
     needs: validate
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
+      attestations: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ${{ inputs.tag || github.ref_name }}
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
@@ -59,6 +72,11 @@ jobs:
 
       - name: Package
         run: tar -czf site.tar.gz -C dist .
+
+      - name: Attest release asset provenance
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: site.tar.gz
 
       - name: Stage draft release with site build
         env:
