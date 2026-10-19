@@ -1,10 +1,25 @@
-# VS Code
-.vscode/
+# Dependencies (restored by `npm install`)
+node_modules/
 
-# System/tool-specific ignores
-.directory
-.DS_Store
+# Build output — the whole deployable site, produced by `npm run build`
+dist/
+
+# Release archive, created during packaging
+*.tar.gz
+
+# Generated source — recreated by `npm install` (prepare) or `npm run gen:icons`
+src/generated/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
 *~
+
+# OS files
+.DS_Store
+.directory
 
 # AI
 .claude/

@@ -1,8 +1,19 @@
 name: Deploy
 
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to deploy
+        required: true
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions: {}
 
 jobs:
   deploy:
@@ -13,8 +24,9 @@ jobs:
       USER: ${{ secrets.SSH_USER }}
       PORT: ${{ secrets.SSH_PORT }}
       KEY: ${{ secrets.SSH_KEY }}
-
       WEB_DIR: ${{ vars.WEB_DIR }}
+      REPO: ${{ github.repository }}
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
 
     steps:
       - name: Deploy to server
@@ -23,9 +35,14 @@ jobs:
           chmod 600 ssh_key
 
           ssh -i ssh_key \
-            -p $PORT \
+            -p "$PORT" \
             -o StrictHostKeyChecking=no \
-            $USER@$HOST \
-            "cd $WEB_DIR && git pull"
+            "$USER@$HOST" \
+            "set -e && \
+             curl -fsSL -o /tmp/site.tar.gz https://github.com/$REPO/releases/download/$TAG/site.tar.gz && \
+             mkdir -p '$WEB_DIR' && \
+             find '$WEB_DIR' -mindepth 1 -delete && \
+             tar -xzf /tmp/site.tar.gz -C '$WEB_DIR' && \
+             rm /tmp/site.tar.gz"
 
           rm ssh_key
