@@ -14,17 +14,14 @@ permissions: {}
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    env:
-      HOST: ${{ secrets.SSH_HOST }}
-      USER: ${{ secrets.SSH_USER }}
-      PORT: ${{ secrets.SSH_PORT }}
-      KEY: ${{ secrets.SSH_KEY }}
-      WEB_DIR: ${{ vars.WEB_DIR }}
-      REPO: ${{ github.repository }}
-
     steps:
       - name: Deploy to server
+        env:
+          HOST: ${{ secrets.SSH_HOST }}
+          USER: ${{ secrets.SSH_USER }}
+          PORT: ${{ secrets.SSH_PORT }}
+          KEY: ${{ secrets.SSH_KEY }}
+          WEB_DIR: ${{ vars.WEB_DIR }}
         run: |
           echo "$KEY" > ssh_key
           chmod 600 ssh_key
@@ -33,11 +30,11 @@ jobs:
             -p "$PORT" \
             -o StrictHostKeyChecking=no \
             "$USER@$HOST" \
-            "set -e && \
-             curl -fsSL -o /tmp/site.tar.gz https://github.com/$REPO/releases/latest/download/site.tar.gz && \
-             mkdir -p '$WEB_DIR' && \
-             find '$WEB_DIR' -mindepth 1 -delete && \
-             tar -xzf /tmp/site.tar.gz -C '$WEB_DIR' && \
-             rm /tmp/site.tar.gz"
+            "curl -fsSL https://github.com/$GITHUB_REPOSITORY/releases/latest/download/site.tar.gz \
+              -o /tmp/site.tar.gz \
+              && mkdir -p '$WEB_DIR' \
+              && find '$WEB_DIR' -mindepth 1 -delete \
+              && tar -xzf /tmp/site.tar.gz -C '$WEB_DIR' \
+              && rm /tmp/site.tar.gz"
 
           rm ssh_key
